@@ -44,7 +44,7 @@ public class GameView extends SurfaceView implements Runnable{
     private Boolean paused=true;
     private Boolean AddScore=true;
     private Canvas canvas;
-    private int s=3000;
+    private int s=300;
     private int t=0;
     private int highScore=0;
     private long nxtfrmtime;
@@ -67,7 +67,7 @@ public class GameView extends SurfaceView implements Runnable{
 
     void newGame()
     {
-        s=3000;
+        s=600;
         food.setFoodPos();
         person.moveSnake();
         nxtfrmtime=System.currentTimeMillis();
@@ -91,12 +91,12 @@ public class GameView extends SurfaceView implements Runnable{
     private Boolean updatereq()
     {
         if(System.currentTimeMillis()>nxtfrmtime) {
-            if(s<4000)
+            if(s<700)
             {
             nxtfrmtime += 100;
             if (!paused)
             {
-                s -= 50;
+                s -= 5;
                 t++;
             }
             }
@@ -105,7 +105,7 @@ public class GameView extends SurfaceView implements Runnable{
                 nxtfrmtime += 200;
                 if (!paused)
                 {
-                    s -= 100;
+                    s -= 10;
                     t=t+2;
                 }
             }
@@ -118,19 +118,18 @@ public class GameView extends SurfaceView implements Runnable{
     {
 
         person.moveSnake();
-        if(s<=0)
+        if(s<=5)
         {
             paused = true;
             AddScore=true;
-            db=FirebaseDatabase.getInstance();
-            reference=db.getReference("Score");
+
 
         }
 
         if(person.haveSnakeEatenApple(food.getPosFood()))
         {
 
-            s=s+1500;
+            s=s+food.getKcal();
             food.setFoodPos();
         }
     }
@@ -145,7 +144,7 @@ public class GameView extends SurfaceView implements Runnable{
                 food.drawable(canvas, paint);
                 person.drawSnake(canvas, paint);
                 paint.setTextSize(80);
-                if(s>4000)
+                if(s>700)
                     paint.setColor(Color.parseColor("#FF0000"));
                 else paint.setColor(Color.parseColor("#FF000000"));
                 canvas.drawText(""+ s,1,100,paint);
@@ -214,7 +213,7 @@ public class GameView extends SurfaceView implements Runnable{
                 if(paused)
                 {
                     paused=false;
-                    s=3000;
+                    s=600;
                     t=0;
                     person.reset();
                 }
