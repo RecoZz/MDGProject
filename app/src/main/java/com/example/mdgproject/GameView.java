@@ -44,7 +44,7 @@ public class GameView extends SurfaceView implements Runnable{
     private Boolean paused=true;
     private Boolean AddScore=true;
     private Canvas canvas;
-    private int s=300;
+    private int s=600;
     private int t=0;
     private int highScore=0;
     private long nxtfrmtime;
