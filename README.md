@@ -11,6 +11,6 @@ Each step deducts 5 Kcals, and eating food adds Kcals on basis on data given fro
 Once Kcals reach above 700, speed of head is halved, indicated by changing color of Kcals and time score.
 Once Kcals reach below 5, game is stopped.
 The time score is added to firecase.
-BONUS FEATURE: The score is also checked against the HighScore on the database.
+**BONUS FEATURE:** The score is also checked against the HighScore on the database.
 If its greater, NEW HIGHSCORE! is shown on the screen.
 Again tapping the screen resets Kcals as 600 and score as 0 and the game restarts.
