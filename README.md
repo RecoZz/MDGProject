@@ -3,7 +3,9 @@ This Repo was for Assignment No. 1 of MDG Recruitments 2023.
 The code and layout were developed in Android Studio, using java language.
 The screen is divided into 25 by 25 grid.
 The head and the food position is held on one of the blocks of the grid.
-The food position is selected at random from given criteria, and head's position is directed on basis of Heading enum in Person.java class.
+The food position is selected at random from given criteria, and head's position is directed on basis of Heading enum in Person.java file.
+The food is selected at random from Foods[] array located in Food.java file.
+Once food is selected, its Kcal and Image url are taken from the database.
 The API used for the project is https://rapidapi.com/edamam/api/edamam-food-and-grocery-database/, made by edaman.
 Volley was used for extracting data from the api, and Picasso was used for loading on screen taken from the database.
 The game starts with 600 Kcals. 
